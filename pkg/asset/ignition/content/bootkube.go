@@ -66,6 +66,7 @@ then
 		/usr/bin/cluster-kube-apiserver-operator render \
 		--manifest-etcd-server-urls={{.EtcdCluster}} \
 		--manifest-image=${OPENSHIFT_HYPERSHIFT_IMAGE} \
+		--manifest-etcd-serving-ca=etcd-client-ca.crt \
 		--asset-input-dir=/assets/tls \
 		--asset-output-dir=/assets/kube-apiserver-bootstrap \
 		--config-override-file=/usr/share/bootkube/manifests/config/config-overrides.yaml \
